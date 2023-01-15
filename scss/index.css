@@ -154,7 +154,7 @@ p {
 .navbar .links ul {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 .navbar .links ul li a {
   text-decoration: none;
