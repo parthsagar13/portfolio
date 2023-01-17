@@ -262,11 +262,11 @@ p {
 }
 .hero .image img {
   position: absolute;
-  filter: brightness(60%);
+  filter: brightness(40%);
   left: 17vh;
   bottom: 0;
-  height: 56vh;
-  width: 23vw;
+  height: 53vh;
+  width: 18vw;
   background-color: rgba(18, 14, 14, 0.69);
   -o-object-fit: cover;
      object-fit: cover;
