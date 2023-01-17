@@ -132,46 +132,53 @@ p {
   font-size: 1.5rem;
 }
 
-.navbar {
+#navbar {
   display: flex;
-  justify-content: space-between;
+  margin: 12px;
+  justify-content: space-around;
+  position: -webkit-sticky;
+  position: sticky;
   align-items: center;
+  background-color: #0b0b0b;
   color: white;
-  padding: 2rem 0;
-}
-.navbar .brand_container {
+  z-index: 10;
+  transition: all 300ms ease;
   display: flex;
 }
-.navbar .brand_container .brand h2 span {
-  margin-left: 0.5rem;
-  font-size: 0.9rem;
-  letter-spacing: 0.1rem;
-  color: #45b649;
+#navbar .brand__container {
+  display: flex;
 }
-.navbar .brand_container .toggle {
+#navbar .brand__container .image {
+  margin-top: 12px;
+}
+#navbar .brand__container .image img {
+  width: 78px;
+}
+#navbar .brand__container .toggle {
   display: none;
 }
-.navbar .links ul {
+#navbar .links ul {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
-.navbar .links ul li a {
+#navbar .links ul li a {
   text-decoration: none;
   color: inherit;
 }
-.navbar .links ul li a:hover {
+#navbar .links ul li a:hover {
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.navbar .links ul li i:hover {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.navbar .links ul button {
+#navbar .links ul button {
   padding: 0.5rem;
+}
+#navbar .links ul button a {
+  display: flex;
+  gap: 1rem;
+  color: white;
+  text-decoration: none;
 }
 
 .show {
@@ -182,12 +189,12 @@ p {
 
 .responsive__navbar {
   position: fixed;
-  top: 0;
+  top: 117px;
   right: -350px;
-  height: 100%;
-  width: 70%;
-  background-color: black;
-  z-index: 100;
+  /* height: 99%; */
+  width: 68%;
+  background-color: #0b0b0b;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,7 +202,8 @@ p {
   visibility: hidden;
   transition: 0.4s ease-in-out;
   color: white;
-  padding: 3rem 0;
+  padding: 0rem 0;
+  margin-right: 9px;
 }
 .responsive__navbar .brand {
   display: flex;
@@ -224,6 +232,10 @@ p {
 }
 .responsive__navbar .links ul ul {
   display: flex;
+}
+
+.defaultMargin {
+  margin: 0 14rem;
 }
 
 .hero {
@@ -330,12 +342,12 @@ p {
   width: 100%;
   background: var(--gradient);
   -webkit-border-radius: 100%;
-  clip: rect(0px, 100px, 100px, 50px);
+  clip: rect(0px, 100px, 100px, 20px);
   transform: rotate(250deg);
 }
 
 .two .bar {
-  clip: rect(0px, 100px, 100px, 22px);
+  clip: rect(20px, 100px, 100px, 0px);
 }
 
 .three .bar {
@@ -344,6 +356,20 @@ p {
 
 .four .bar {
   clip: rect(0px, 100px, 100px, 30px);
+}
+
+.title__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+.title__container h2 {
+  color: white;
+}
+.title__container p {
+  color: rgb(153, 153, 153);
 }
 
 .portfolio {
@@ -483,7 +509,6 @@ footer .section h2 {
   margin-bottom: 1rem;
 }
 footer .section .title {
-  color: white;
   margin-bottom: 1.3rem;
 }
 footer .section .social {
@@ -491,12 +516,24 @@ footer .section .social {
   margin-top: 1rem;
   gap: 1rem;
 }
-footer .section .social i {
+footer .section .social svg {
   font-size: 1.2rem;
+  color: #6a6a6a;
+}
+footer .section .social svg:hover {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 footer .section button {
   margin-top: 1rem;
   box-shadow: 2px 1000px 1px #181818 inset;
+}
+footer .section button a {
+  display: flex;
+  gap: 1rem;
+  color: white;
+  text-decoration: none;
 }
 footer .section ul {
   display: flex;
@@ -506,7 +543,7 @@ footer .section ul {
 footer .section ul li {
   display: flex;
   gap: 1rem;
-  transition: 0.5s ease-in-out;
+  color: #6a6a6a;
 }
 footer .section ul li:hover {
   background: var(--gradient);
@@ -521,16 +558,12 @@ footer .section .tags {
 }
 footer .section .tags li {
   padding: 0.5rem;
-  border: 1px solid rgb(129, 128, 128);
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
-footer .section .tags li:hover {
-  color: white !important;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+footer .section .tags li a {
+  color: #ac1919;
 }
 
 .lower__footer {
@@ -545,19 +578,21 @@ footer .section .tags li:hover {
     overflow-x: hidden;
   }
   .defaultMargin {
-    margin: 0 10vw;
+    margin: 0 16vw;
   }
-  .navbar .brand_container {
+  #navbar .brand__container {
     display: flex;
-    justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
+    justify-content: space-around;
     align-items: center;
     gap: 2rem;
     width: 100%;
   }
-  .navbar .brand_container .toggle {
+  #navbar .brand__container .toggle {
     display: block;
   }
-  .navbar .links {
+  #navbar .links {
     display: none;
   }
   .hero {
