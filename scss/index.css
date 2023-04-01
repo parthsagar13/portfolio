@@ -136,7 +136,6 @@ p {
   display: flex;
   margin: 12px;
   justify-content: space-around;
-  position: -webkit-sticky;
   position: sticky;
   align-items: center;
   background-color: #0b0b0b;
@@ -404,15 +403,10 @@ p {
   top: 0%;
   width: 100%;
   height: auto;
-  position: absolute;
   z-index: 0;
   margin: 0;
   padding: 0;
-  transition: top 3s;
-}
-.portfolio .container .portfolio__container .image img:hover {
-  top: -300%;
-  transition: all 3s;
+  cursor: pointer;
 }
 .portfolio .container .portfolio__container:nth-of-type(2) .image img:hover {
   top: -345%;
@@ -558,7 +552,6 @@ footer .section .tags {
 }
 footer .section .tags li {
   padding: 0.5rem;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
@@ -582,7 +575,6 @@ footer .section .tags li a {
   }
   #navbar .brand__container {
     display: flex;
-    position: -webkit-sticky;
     position: sticky;
     justify-content: space-around;
     align-items: center;
@@ -609,12 +601,7 @@ footer .section .tags li a {
     font-size: 3rem;
   }
   .hero .image {
-    position: initial;
-  }
-  .hero .image img {
-    position: initial;
-    height: 100%;
-    width: 100%;
+    display: block;
   }
   .about {
     margin: 0 10vw;
